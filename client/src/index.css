@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+@font-face {
+  font-family: "TillanaBold";
+  src: url(./Fonts/Tillana-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "TillanaExtraBold";
+  src: url(./Fonts/Tillana-ExtraBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "TillanaMedium";
+  src: url(./Fonts/Tillana-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "TillanaRegular";
+  src: url(./Fonts/Tillana-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "TillanaSemiBold";
+  src: url(./Fonts/Tillana-SemiBold.ttf) format("truetype");
+}
+a {
+  text-decoration: none;
+}
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
+.noneMedia {
+  display: block;
+}
+.active {
+  color: #336699 !important;
+}
+.activeBg > div {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border: 1px solid gray;
+  font-size: 15px;
+  background-color: #336699;
+  color: #fff;
+  cursor: pointer;
+}
+.empty {
+  text-align: center;
+  font-size: 25px;
+  font-family: "TillanaSemiBold";
+}
+@media only screen and (max-width: 991px) {
+  .noneMedia {
+    display: block;
+  }
+  .empty {
+    margin: 5rem 0rem;
+  }
+}
+.hidden {
+  overflow: hidden;
+}
+.rel {
+  position: relative;
+}
+.m2 {
+  margin: 30px;
+}
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1.2rem;
+  line-height: 23px;
+  outline: none;
+  padding: 7rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  z-index: 100000000;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffffff;
+  border: 2px solid #000;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 15px;
+  left: 15px;
+  transition: 0.2s;
+}
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+.slick-slider {
+  overflow: hidden;
+  cursor: pointer;
+}
+.asNavGrid {
+  display: flex;
+  margin: 0px 50px;
+  padding-bottom: 100px;
+}
+.asNavSlider {
+  display: flex;
+  margin: 0px 200px;
+  margin-top: -50px;
+}
+.asNavProduct {
+  display: flex;
+}
+.position {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+.homeBg {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 991px) {
+  .asNavGrid {
+    display: flex;
+    margin: 0px 20px;
+    padding-bottom: 210px;
+  }
+}
+.swiper {
+  width: 860px;
+  height: 100%;
+  /* margin-bottom: 50rem; */
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 991px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.myswiper {
+  width: 350px;
+  height: 100%;
+}
