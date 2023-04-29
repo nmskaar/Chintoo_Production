@@ -18,7 +18,7 @@ export function APIContextProvider({ children }) {
 
   // GET Slider_Data
   const getSliderData = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/slider_list")
+    return await fetch("/api1/slider_list")
       .then((res) => res.json())
       .then((res) => {
         setSliderData(res.response.sliders);
@@ -27,7 +27,7 @@ export function APIContextProvider({ children }) {
 
   // GET Character_Data
   const getCharacterData = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/charactor_list")
+    return await fetch("/api1/charactor_list")
       .then((res) => res.json())
       .then((res) => {
         setCharacterData(res.response.charactors);
@@ -36,7 +36,7 @@ export function APIContextProvider({ children }) {
 
   // GET Creator_Data
   const getCreatorData = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/creator_list")
+    return await fetch("/api1/creator_list")
       .then((res) => res.json())
       .then((res) => {
         setCreatorData(res.response.creators);
@@ -45,7 +45,7 @@ export function APIContextProvider({ children }) {
 
   // GET Events_Data
   const getEventsData = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/event_list")
+    return await fetch("/api1/event_list")
       .then((res) => res.json())
       .then((res) => {
         setEventsData(res.response.events);
@@ -54,7 +54,7 @@ export function APIContextProvider({ children }) {
 
   // GET Settings_Data
   const getSettingData = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/settings")
+    return await fetch("/api1/settings")
       .then((res) => res.json())
       .then((res) => {
         setSettingsData(res.response.settings);
@@ -63,7 +63,7 @@ export function APIContextProvider({ children }) {
 
   // GET Comapny_Info
   const getCompanyInfo = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/company_info")
+    return await fetch("/api1/company_info")
       .then((res) => res.json())
       .then((res) => {
         setCompanyinfoData(res.response.company_info);
@@ -72,7 +72,7 @@ export function APIContextProvider({ children }) {
 
   // GET Strip Year List
   const getStripYearList = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/stripyear_list")
+    return await fetch("/api1/stripyear_list")
       .then((res) => res.json())
       .then((res) => {
         setStripYearList(res.response.strip_year);
@@ -81,7 +81,7 @@ export function APIContextProvider({ children }) {
 
   // GET Attribute List
   const getAttributeList = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/attribute_list")
+    return await fetch("/api1/attribute_list")
       .then((res) => res.json())
       .then((res) => {
         setAttributeList(res.response.attribute_list);
@@ -90,7 +90,7 @@ export function APIContextProvider({ children }) {
 
   // GET Price List
   const getPriceList = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/price_range_list")
+    return await fetch("/api1/price_range_list")
       .then((res) => res.json())
       .then((res) => {
         setPriceList(res.response.price_range_list);
@@ -99,7 +99,7 @@ export function APIContextProvider({ children }) {
 
   // GET Category List
   const getCategoryList = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/category_list")
+    return await fetch("/api1/category_list")
       .then((res) => res.json())
       .then((res) => {
         setCategoryList(res.response.categories);
@@ -108,7 +108,7 @@ export function APIContextProvider({ children }) {
 
   // GET Country List
   const getCountryList = async () => {
-    return await fetch("https://applexinfotech.com/chintoo2/admin/api1/country_list")
+    return await fetch("/api1/country_list")
       .then((res) => res.json())
       .then((res) => {
         setCountry(res.response.countries);

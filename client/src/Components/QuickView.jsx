@@ -49,7 +49,7 @@ const QuickView = ({
 
   const getProductData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/product_detail", quickViewValue, options)
+      .post("/api1/product_detail", quickViewValue, options)
       .then((res) => {
         setDetailProductData(res.data.response.productinfo);
         setAttribute(res.data.response.productinfo.attributes);
@@ -89,7 +89,7 @@ const QuickView = ({
   const addWishlist = async (detailProductData) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_wishlist",
+        "/api1/add_to_wishlist",
         { user_id: userId, product_id: detailProductData.product_id },
         options
       );
@@ -121,7 +121,7 @@ const QuickView = ({
   const addToCart = async (detailProductData) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
+        "/api1/add_to_cart",
         {
           user_id: userId,
           product_id: detailProductData.product_id,

@@ -41,7 +41,7 @@ const CartSidebar = ({
   const totalCart = cartPrice;
   const getCart = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/get_cart", { user_id: userId }, options)
+      .post("/api1/get_cart", { user_id: userId }, options)
       .then((res) => {
         setShowCart(res.data.response.cart);
       })
@@ -53,7 +53,7 @@ const CartSidebar = ({
   const deleteCart = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/remove_from_cart",
+        "/api1/remove_from_cart",
         {
           user_id: userId,
           product_id: item.product_id,

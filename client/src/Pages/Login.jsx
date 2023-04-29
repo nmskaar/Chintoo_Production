@@ -73,7 +73,7 @@ const Login = ({ cartItems, accout, setAccount }) => {
   localStorage.setItem("username", JSON.stringify(loginData.username));
   const loginUser = async () => {
     try {
-      const res = await axios.post("https://applexinfotech.com/chintoo2/admin/api1/login", loginValue, options);
+      const res = await axios.post("/api1/login", loginValue, options);
       console.log(res);
       if (res.data.response.message == "required_field") {
         return toast.error(res.data.response.message);

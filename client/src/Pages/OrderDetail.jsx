@@ -25,7 +25,7 @@ const OrderDetail = () => {
   };
   const getOrderDetail = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/order_detail", { id: id }, options)
+      .post("/api1/order_detail", { id: id }, options)
       .then((res) => {
         setOrderDetail(res.data.response.order_detail);
         setProductList(res.data.response.order_detail.product_info);

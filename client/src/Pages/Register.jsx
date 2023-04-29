@@ -117,7 +117,7 @@ const Register = () => {
         return toast.error("Weak Password");
       }
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/user_registration",
+        "/api1/user_registration",
         userRegisterData,
         options
       );

@@ -36,7 +36,7 @@ const StripMonthCard = ({ yearValue, setYearValue }) => {
   };
   const geEventData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api/stripmonth_list", stripValue, options)
+      .post("/api1/stripmonth_list", stripValue, options)
       .then((res) => {
         setStripMonthList(res.data.response.strip_month);
       })

@@ -33,7 +33,7 @@ const ForgotPassword = () => {
         return toast.error("Enter a valid mobile no");
       }
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/forgot_password",
+        "/api1/forgot_password",
         forgotValue,
         options
       );

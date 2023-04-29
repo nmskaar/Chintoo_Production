@@ -30,6 +30,8 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   const [accountEmail, setAccountEmail] = useState("");
   const [zipCode, setZipcode] = useState("");
 
+  
+
   const [shipName, setShipName] = useState("");
   const [shipAddress, setShipAddress] = useState("");
   const [shipAddress2, setShipAddress2] = useState("");
@@ -59,7 +61,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const getAddressDetail = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/address_detail", accountDetailValue, options)
+      .post("/api1/address_detail", accountDetailValue, options)
       .then((res) => {
         setAddressOne(res.data.response.address_detail.customer_address);
         setAddressTwo(res.data.response.address_detail.address2);
@@ -84,7 +86,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const getAccountDetail = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/account_detail", accountDetailValue, options)
+      .post("/api1/account_detail", accountDetailValue, options)
       .then((res) => {
         setAccountName(res.data.response.account_detail.customer_name);
         setAccountEmail(res.data.response.account_detail.customer_email);
@@ -125,7 +127,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getStateData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/state_list", stateValue, options)
+      .post("/api1/state_list", stateValue, options)
       .then((res) => {
         setStateId(res.data.response.states);
       })
@@ -135,7 +137,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getCityData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/city_list", cityValue, options)
+      .post("/api1/city_list", cityValue, options)
       .then((res) => {
         setCityData(res.data.response.cities);
       })
@@ -157,7 +159,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getStates = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/state_list", stateKey, options)
+      .post("/api1/state_list", stateKey, options)
       .then((res) => {
         setStateData(res.data.response.states);
       })
@@ -167,7 +169,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getCities = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/city_list", cityKey, options)
+      .post("/api1/city_list", cityKey, options)
       .then((res) => {
         setCities(res.data.response.cities);
       })
@@ -230,11 +232,11 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const updateCheckout = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/checkout", checkOutValue, options)
+      .post("/api1/checkout", checkOutValue, options)
       .then((res) => {
         if (
           res.data.response.message == "Invalid Promo Code..!!" ||
-          res.data.response.message == ""
+          res.data.response.message == "" || res.data.response.message == "Sorry...We do not serve this location." 
         ) {
           setTrueValue(false);
           setInvalidPromo(res.data.response.message);
@@ -264,11 +266,11 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const handleCheckBtn = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/checkout", checkOutValue, options)
+      .post("/api1/checkout", checkOutValue, options)
       .then((res) => {
         if (
           res.data.response.message == "Invalid Promo Code..!!" ||
-          res.data.response.message == ""
+          res.data.response.message == "" 
         ) {
           setTrueValue(false);
           setInvalidPromo(res.data.response.message);
@@ -301,16 +303,16 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
     if (!promo) {
       return toast.error("Promo code is required");
     }
-    if (!billingDetails.billingCountry) {
-      return toast.error("Billing country is required");
-    }
-    if (!billingDetails.billingState) {
-      return toast.error("Billing state is required");
-    }
-    if (!billingDetails.billingCity) {
+    // if (!addressCountry) {
+    //   return toast.error("Billing country is required");
+    // }
+    // if (!addressState) {
+    //   return toast.error("Billing state is required");
+    // }
+    if (!addressCity) {
       return toast.error("Billing city is required");
     }
-    if (!billingDetails.shippingZip) {
+    if (!postCode) {
       return toast.error("Postcode is required");
     }
     updateCheckout();
@@ -358,7 +360,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
       },
     };
     const data = await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/create_order", { amount: totalCheck }, header)
+      .post("/api1/create_order", { amount: totalCheck }, header)
       .then((res) => {
         setCreateOrder(res.data.response.order_detail);
         setOrderAmount(res.data.response.order_detail.amount);
@@ -388,7 +390,6 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
           localStorage.setItem("paymentId", response.razorpay_payment_id);
           localStorage.setItem("orderId", response.razorpay_order_id);
           localStorage.setItem("sign", response.razorpay_signature);
-          console.log(placeValue);
           placeOrder();
         }
       },
@@ -405,6 +406,63 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   const paymentId = localStorage.getItem("paymentId");
   const orderId = localStorage.getItem("orderId");
   const signature = localStorage.getItem("sign");
+  
+  // accountName, gstinNo, addressOne, addressTwo, addressCountry, addressState, addressCity, addressPhone, accountEmail, zipCode, shipName shipAddress shipAddress2 shipCountry shipState shipCity postCode orderNote
+   
+  const formValidate = () => {
+    if (!accountName) {
+      return toast.error("Billing Name is required");
+    }
+    if (!gstinNo) {
+      return toast.error("Gstin No is required");
+    }
+    if (!addressOne) {
+      return toast.error("Address One is required");
+    }
+    if (!addressTwo) {
+      return toast.error("Address Two is required");
+    }
+    if (!addressCountry) {
+      return toast.error("Billing Country is required");
+    }
+    if (!addressState) {
+      return toast.error("Billing State is required");
+    }
+    if (!addressCity) {
+      return toast.error("Billing city is required");
+    }
+    if (!addressPhone) {
+      return toast.error("Phone No is required");
+    }
+    if (!accountEmail) {
+      return toast.error("Email is required");
+    }
+    if (!zipCode) {
+      return toast.error("Zip code is required");
+    }
+    if (!shipName) {
+      return toast.error("Shipping Name is required");
+    }
+    if (!shipAddress) {
+      return toast.error("Shipping Address is required");
+    }
+    if (!shipAddress2) {
+      return toast.error("Shipping Address is required");
+    }
+    if (!shipCountry) {
+      return toast.error("Shipping Country is required");
+    }
+    if (!shipState) {
+      return toast.error("Shipping State is required");
+    }
+    if (!shipCity) {
+      return toast.error("Shipping City is required");
+    }
+    if (!postCode) {
+      return toast.error("Postcode is required");
+    }
+    handleInfo();
+  }
 
   const handleInfo = () => {
     productInfo.map((item) => {
@@ -471,7 +529,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const placeOrder = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/place_order", placeValue, options)
+      .post("/api1/place_order", placeValue, options)
       .then((res) => {
         console.log(res);
         localStorage.setItem(
@@ -872,7 +930,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
             ></textarea>
             <UpdateBtn
               onClick={() => {
-                handleInfo();
+                formValidate();
                 updateCheckout();
               }}
             >

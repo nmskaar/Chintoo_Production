@@ -24,7 +24,7 @@ const CartCompo = ({ add, increment, forceUpdate }) => {
   };
   const getCart = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/get_cart", { user_id: userId }, options)
+      .post("/api1/get_cart", { user_id: userId }, options)
       .then((res) => {
         setShowCart(res.data.response.cart);
       })
@@ -35,7 +35,7 @@ const CartCompo = ({ add, increment, forceUpdate }) => {
   const deleteCart = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/remove_from_cart",
+        "/api1/remove_from_cart",
         {
           user_id: userId,
           product_id: item.product_id,
@@ -58,7 +58,7 @@ const CartCompo = ({ add, increment, forceUpdate }) => {
   const addToCart = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
+        "/api1/add_to_cart",
         {
           product_id: item.product_id,
           user_id: userId,
@@ -76,7 +76,7 @@ const CartCompo = ({ add, increment, forceUpdate }) => {
   const decremnetCart = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
+        "/api1/add_to_cart",
         {
           product_id: item.product_id,
           user_id: userId,
@@ -94,7 +94,7 @@ const CartCompo = ({ add, increment, forceUpdate }) => {
   const clearCart = async () => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/clear_cart",
+        "/api1/clear_cart",
         { user_id: userId },
         options
       );

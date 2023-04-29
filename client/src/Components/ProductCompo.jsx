@@ -96,7 +96,7 @@ const ProductCompo = ({
   };
   const getProductData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/product_list", productValue, options)
+      .post("/api1/product_list", productValue, options)
       .then((res) => {
         setProductData(res.data.response.product_list);
         console.log(res.data.response.product_list);
@@ -127,7 +127,7 @@ const ProductCompo = ({
   const addWishlist = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_wishlist",
+        "/api1/add_to_wishlist",
         { user_id: userId, product_id: item.product_id },
         options
       );
@@ -148,7 +148,7 @@ const ProductCompo = ({
   const addToCart = async (item) => {
     try {
       const res = await axios.post(
-        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
+        "/api1/add_to_cart",
         {
           product_id: item.product_id,
           user_id: userId,

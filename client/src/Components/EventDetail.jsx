@@ -18,7 +18,7 @@ const EventDetail = () => {
   };
   const geEventData = async () => {
     await axios
-      .post("https://applexinfotech.com/chintoo2/admin/api1/event_detail", eventValue, options)
+      .post("/api1/event_detail", eventValue, options)
       .then((res) => {
         setEventData(res.data.response.events);
       })
