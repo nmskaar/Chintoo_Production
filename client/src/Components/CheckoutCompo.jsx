@@ -61,7 +61,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const getAddressDetail = async () => {
     await axios
-      .post("/api1/address_detail", accountDetailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/address_detail", accountDetailValue, options)
       .then((res) => {
         setAddressOne(res.data.response.address_detail.customer_address);
         setAddressTwo(res.data.response.address_detail.address2);
@@ -86,7 +86,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const getAccountDetail = async () => {
     await axios
-      .post("/api1/account_detail", accountDetailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/account_detail", accountDetailValue, options)
       .then((res) => {
         setAccountName(res.data.response.account_detail.customer_name);
         setAccountEmail(res.data.response.account_detail.customer_email);
@@ -127,7 +127,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getStateData = async () => {
     await axios
-      .post("/api1/state_list", stateValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/state_list", stateValue, options)
       .then((res) => {
         setStateId(res.data.response.states);
       })
@@ -137,7 +137,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getCityData = async () => {
     await axios
-      .post("/api1/city_list", cityValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/city_list", cityValue, options)
       .then((res) => {
         setCityData(res.data.response.cities);
       })
@@ -159,7 +159,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getStates = async () => {
     await axios
-      .post("/api1/state_list", stateKey, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/state_list", stateKey, options)
       .then((res) => {
         setStateData(res.data.response.states);
       })
@@ -169,7 +169,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const getCities = async () => {
     await axios
-      .post("/api1/city_list", cityKey, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/city_list", cityKey, options)
       .then((res) => {
         setCities(res.data.response.cities);
       })
@@ -232,7 +232,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const updateCheckout = async () => {
     await axios
-      .post("/api1/checkout", checkOutValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/checkout", checkOutValue, options)
       .then((res) => {
         if (
           res.data.response.message == "Invalid Promo Code..!!" ||
@@ -266,7 +266,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
 
   const handleCheckBtn = async () => {
     await axios
-      .post("/api1/checkout", checkOutValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/checkout", checkOutValue, options)
       .then((res) => {
         if (
           res.data.response.message == "Invalid Promo Code..!!" ||
@@ -360,7 +360,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
       },
     };
     const data = await axios
-      .post("/api1/create_order", { amount: totalCheck }, header)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/create_order", { amount: totalCheck }, header)
       .then((res) => {
         setCreateOrder(res.data.response.order_detail);
         setOrderAmount(res.data.response.order_detail.amount);
@@ -527,7 +527,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
   const placeOrder = async () => {
     await axios
-      .post("/api1/place_order", placeValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/place_order", placeValue, options)
       .then((res) => {
         console.log(res);
         localStorage.setItem(

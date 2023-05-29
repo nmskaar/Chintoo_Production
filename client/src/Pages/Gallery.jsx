@@ -28,7 +28,7 @@ const Gallery = () => {
   };
   const getGalleryData = async () => {
     await axios
-      .post("/api1/gallery_list", options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/gallery_list", options)
       .then((res) => {
         setGalleryData(res.data.response.gallery);
       })

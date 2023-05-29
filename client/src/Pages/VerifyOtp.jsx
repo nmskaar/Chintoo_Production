@@ -34,7 +34,7 @@ const VerifyOtp = () => {
         return toast.error("Otp must be up to 6 characters");
       }
       const res = await axios.post(
-        "/api1/verify_otp",
+        "https://applexinfotech.com/chintoo2/admin/api1/verify_otp",
         forgotValue,
         options
       );
@@ -63,7 +63,7 @@ const VerifyOtp = () => {
   const resendOtp = async () => {
     try {
       const res = await axios.post(
-        "/api1/resend_otp",
+        "https://applexinfotech.com/chintoo2/admin/api1/resend_otp",
         resendOtpValue,
         options
       );

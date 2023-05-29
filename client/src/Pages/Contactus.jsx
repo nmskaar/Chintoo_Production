@@ -3,6 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useAPI } from "../Context/apiContext";
 import styled from "styled-components";
 import BgBlack from "../Assets/strips/bg1.png";
+import { toast } from "react-toastify";
 
 const Contactus = () => {
   const [clickFaq, setClickFaq] = useState(true);
@@ -20,6 +21,16 @@ const Contactus = () => {
   const { companyinfoData } = useAPI();
 
   const [verfied, setVerifed] = useState(false);
+
+  const contactUs = () => {};
+
+  const validateContactus = () => {
+    if (verfied === false) {
+      return toast.error("Invalid Captcha..!!");
+    } else {
+      contactUs();
+    }
+  };
 
   const { settingsData } = useAPI();
 
@@ -217,7 +228,12 @@ const Contactus = () => {
                         </>
                       );
                     })}
-                    <div className="send_now">Send now</div>
+                    <div
+                      className="send_now"
+                      onClick={() => validateContactus()}
+                    >
+                      Send now
+                    </div>
                   </ContactFormCard>
                 </ContactFormGrid>
               </ContactContainer>

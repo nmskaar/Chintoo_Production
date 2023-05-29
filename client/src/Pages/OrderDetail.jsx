@@ -26,7 +26,7 @@ const OrderDetail = () => {
   const getOrderDetail = async () => {
     await axios
       .post(
-        "/api1/order_detail",
+        "https://applexinfotech.com/chintoo2/admin/api1/order_detail",
         { id: id },
         options
       )

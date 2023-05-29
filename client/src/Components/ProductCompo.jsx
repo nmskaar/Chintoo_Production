@@ -98,7 +98,7 @@ const ProductCompo = ({
   const getProductData = async () => {
     await axios
       .post(
-        "/api1/product_list",
+        "https://applexinfotech.com/chintoo2/admin/api1/product_list",
         productValue,
         options
       )
@@ -132,7 +132,7 @@ const ProductCompo = ({
   const addWishlist = async (item) => {
     try {
       const res = await axios.post(
-        "/api1/add_to_wishlist",
+        "https://applexinfotech.com/chintoo2/admin/api1/add_to_wishlist",
         { user_id: userId, product_id: item.product_id },
         options
       );
@@ -153,7 +153,7 @@ const ProductCompo = ({
   const addToCart = async (item) => {
     try {
       const res = await axios.post(
-        "/api1/add_to_cart",
+        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
         {
           product_id: item.product_id,
           user_id: userId,
@@ -981,11 +981,11 @@ const ProductCard = styled.div`
       position: relative;
       width: 280px;
       height: 320px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 4.5rem;
     }
     img {
       width: 100%;
-      height: 70%;
+      height: 80%;
       background-color: whitesmoke;
       padding: 10px;
       border: 2px solid #333;

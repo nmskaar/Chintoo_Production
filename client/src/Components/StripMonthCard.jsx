@@ -36,7 +36,7 @@ const StripMonthCard = ({ yearValue, setYearValue }) => {
   };
   const geEventData = async () => {
     await axios
-      .post("/api1/stripmonth_list", stripValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/stripmonth_list", stripValue, options)
       .then((res) => {
         setStripMonthList(res.data.response.strip_month);
       })
@@ -70,76 +70,10 @@ const StripMonthCard = ({ yearValue, setYearValue }) => {
                   </YearCard>
                 );
               })}
-              {/* <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip1} alt="" />
-                <h3>January</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip2} alt="" />
-                <h3>February</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip3} alt="" />
-                <h3>March</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip1} alt="" />
-                <h3>April</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip2} alt="" />
-                <h3>May</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip3} alt="" />
-                <h3>Jun</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard> */}
             </YearContianer>
           </YearCards>
         ) : null}
-        {/* {toggleBtn === 2 ? (
-          <YearCards>
-            <YearContianer>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip2} alt="" />
-                <h3>July</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip1} alt="" />
-                <h3>August</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip3} alt="" />
-                <h3>September</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip2} alt="" />
-                <h3>October</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip1} alt="" />
-                <h3>November</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-              <YearCard to="/strips-slider" data-aos="fade-down">
-                <img src={strip3} alt="" />
-                <h3>Desember</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </YearCard>
-            </YearContianer>
-          </YearCards>
-        ) : null} */}
-        <PageInition>
+        {/* <PageInition>
           <ArrowLeft className="button-55" onClick={() => togglePage(1)}>
             <i className="fa-solid fa-arrow-left"></i>
           </ArrowLeft>
@@ -161,7 +95,7 @@ const StripMonthCard = ({ yearValue, setYearValue }) => {
           <ArrowRight className="button-55" onClick={() => togglePage(2)}>
             <i class="fa-solid fa-arrow-right"></i>
           </ArrowRight>
-        </PageInition>
+        </PageInition> */}
       </YearContainer>
     </BgStrips>
   );

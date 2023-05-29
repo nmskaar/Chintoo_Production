@@ -292,6 +292,7 @@ export const SocialLinks = styled.div`
 export const PasswordCard = styled.div`
   border: 1px solid #336699;
   padding: 5px;
+  margin-bottom: 20px;
   ul {
     display: flex;
     align-items: flex-start;

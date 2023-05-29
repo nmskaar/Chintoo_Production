@@ -21,7 +21,7 @@ const Wishlist = () => {
   };
   const getWishList = async () => {
     await axios
-      .post("/api1/get_wishlist", wishlistValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/get_wishlist", wishlistValue, options)
       .then((res) => {
         setWishlist(res.data.response.wish_list);
       })
@@ -32,7 +32,7 @@ const Wishlist = () => {
   const deleteWishlist = async (item) => {
     try {
       const res = await axios.post(
-        "/api1/delete_from_wishlist",
+        "https://applexinfotech.com/chintoo2/admin/api1/delete_from_wishlist",
         { user_id: userId, product_id: item.product_id },
         options
       );
@@ -54,7 +54,7 @@ const Wishlist = () => {
   const addToCart = async (item) => {
     try {
       const res = await axios.post(
-        "/api1/add_to_cart",
+        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
         {
           user_id: userId,
           product_id: item.product_id,

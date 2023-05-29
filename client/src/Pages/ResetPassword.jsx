@@ -90,7 +90,7 @@ const ResetPassword = () => {
         return toast.error("Weak Password");
       }
       const res = await axios.post(
-        "/api1/reset_password",
+        "https://applexinfotech.com/chintoo2/admin/api1/reset_password",
         resetPasswordValue,
         options
       );

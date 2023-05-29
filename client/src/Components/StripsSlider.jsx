@@ -67,7 +67,7 @@ const StripsSlider = ({ yearValue }) => {
   };
   const geEventData = async () => {
     await axios
-      .post("/api1/strip_list", sliderValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/strip_list", sliderValue, options)
       .then((res) => {
         setStripSlider(res.data.response.strips);
       })

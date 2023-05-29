@@ -170,7 +170,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
   };
   const getProductData = async () => {
     await axios
-      .post("/api1/product_detail", detailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/product_detail", detailValue, options)
       .then((res) => {
         setDetailProductData(res.data.response.productinfo);
         setAttribute(res.data.response.productinfo.attributes);
@@ -185,7 +185,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
   //-- POST RELATED PRODUCT --//
   const getRelatedProduct = async () => {
     await axios
-      .post("/api1/related_product_list", detailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/related_product_list", detailValue, options)
       .then((res) => {
         setRelatedProduct(res.data.response.product_list);
       })
@@ -197,7 +197,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
   //-- POST MORE PRODUCT --//
   const getMoreProduct = async () => {
     await axios
-      .post("/api1/more_product_list", detailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/more_product_list", detailValue, options)
       .then((res) => {
         setMoreProduct(res.data.response.product_list);
       })
@@ -219,7 +219,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
   const addWishlist = async (detailProductData) => {
     try {
       const res = await axios.post(
-        "/api1/add_to_wishlist",
+        "https://applexinfotech.com/chintoo2/admin/api1/add_to_wishlist",
         { user_id: userId, product_id: detailProductData.product_id },
         options
       );
@@ -258,7 +258,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
   const addToCart = async (detailProductData) => {
     try {
       const res = await axios.post(
-        "/api1/add_to_cart",
+        "https://applexinfotech.com/chintoo2/admin/api1/add_to_cart",
         {
           user_id: userId,
           product_id: detailProductData.product_id,
@@ -858,7 +858,7 @@ const DetailCard = styled.div`
   }
   .slider_img {
     width: 380px;
-    height: 400px;
+    height: 450px;
   }
   .slider_asnav {
     width: 100%;

@@ -18,7 +18,7 @@ const EventDetail = () => {
   };
   const geEventData = async () => {
     await axios
-      .post("/api1/event_detail", eventValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/event_detail", eventValue, options)
       .then((res) => {
         setEventData(res.data.response.events);
       })
@@ -395,7 +395,8 @@ const EventGrid = styled.div`
 const EventCard = styled.div`
   img {
     width: 100%;
-    height: 600px;
+    height: 650px;
+    object-fit: cover;
     border-radius: 10px;
   }
   h2 {

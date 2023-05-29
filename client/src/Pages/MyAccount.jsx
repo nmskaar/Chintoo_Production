@@ -39,7 +39,7 @@ const MyAccount = ({ setAccount }) => {
   const [detailData, setDetailData] = useState([]);
   const getAccountDetail = async () => {
     await axios
-      .post("/api1/account_detail", accountDetailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/account_detail", accountDetailValue, options)
       .then((res) => {
         setDetailData(res.data.response.account_detail);
         setAccountName(res.data.response.account_detail.customer_name);
@@ -62,7 +62,7 @@ const MyAccount = ({ setAccount }) => {
         return toast.error("All fields are required");
       }
       const res = await axios.post(
-        "/api1/update_account_detail",
+        "https://applexinfotech.com/chintoo2/admin/api1/update_account_detail",
         accountValue,
         options
       );
@@ -83,7 +83,7 @@ const MyAccount = ({ setAccount }) => {
 
   const getAddressDetail = async () => {
     await axios
-      .post("/api1/address_detail", accountDetailValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/address_detail", accountDetailValue, options)
       .then((res) => {
         setAddressData(res.data.response.address_detail);
         setAddressOne(res.data.response.address_detail.customer_address);
@@ -114,7 +114,7 @@ const MyAccount = ({ setAccount }) => {
   };
   const getStateData = async () => {
     await axios
-      .post("/api1/state_list", stateValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/state_list", stateValue, options)
       .then((res) => {
         setStateId(res.data.response.states);
       })
@@ -124,7 +124,7 @@ const MyAccount = ({ setAccount }) => {
   };
   const getCityData = async () => {
     await axios
-      .post("/api1/city_list", cityValue, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/city_list", cityValue, options)
       .then((res) => {
         setCityData(res.data.response.cities);
       })
@@ -139,7 +139,7 @@ const MyAccount = ({ setAccount }) => {
   const [invoiceList, setInvoiceList] = useState([]);
   const getInvoiceList = async () => {
     await axios
-      .post("/api1/invoice_list", { user_id: userAddress }, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/invoice_list", { user_id: userAddress }, options)
       .then((res) => {
         setInvoiceList(res.data.response.invoice_list);
       })
@@ -152,7 +152,7 @@ const MyAccount = ({ setAccount }) => {
   const [orderList, setOrderList] = useState([]);
   const getOrderList = async () => {
     await axios
-      .post("/api1/order_list", { user_id: userAddress }, options)
+      .post("https://applexinfotech.com/chintoo2/admin/api1/order_list", { user_id: userAddress }, options)
       .then((res) => {
         setOrderList(res.data.response.order_list);
       })
@@ -183,7 +183,7 @@ const MyAccount = ({ setAccount }) => {
         return toast.error("All fields are required");
       }
       const res = await axios.post(
-        "/api1/update_address_detail",
+        "https://applexinfotech.com/chintoo2/admin/api1/update_address_detail",
         addressUpdateValue,
         options
       );
@@ -226,7 +226,7 @@ const MyAccount = ({ setAccount }) => {
         return toast.error("All fields are required");
       }
       const res = await axios.post(
-        "/api1/change_password",
+        "https://applexinfotech.com/chintoo2/admin/api1/change_password",
         passwordValue,
         options
       );
