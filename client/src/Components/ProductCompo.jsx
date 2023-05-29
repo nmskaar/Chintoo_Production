@@ -16,6 +16,7 @@ import QuickView from "./QuickView";
 import ProductModal from "./ProductModal";
 import CartModal from "./CartModal";
 import { toast } from "react-toastify";
+import FilterSidebar from "./FilterSidebar";
 
 const ProductCompo = ({
   showFilterSidebar,
@@ -96,7 +97,11 @@ const ProductCompo = ({
   };
   const getProductData = async () => {
     await axios
-      .post("/api1/product_list", productValue, options)
+      .post(
+        "/api1/product_list",
+        productValue,
+        options
+      )
       .then((res) => {
         setProductData(res.data.response.product_list);
         console.log(res.data.response.product_list);
@@ -179,14 +184,207 @@ const ProductCompo = ({
         </h2>
         <ProductDiv>
           <ProductGrid>
-            <ProductCard
-              className={showFilter ? "filter-menu active" : "filter-menu"}
-            >
+            {showFilter === true ? (
+              <ProductCard
+                style={{
+                  display: showFilter ? "block" : "none",
+                  width: showFilter ? "80%" : "",
+                  height: showFilter ? "100vh" : "",
+                  background: showFilter ? "#fff" : "",
+                  position: showFilter ? "fixed" : "",
+                  top: showFilter ? "0%" : "",
+                  left: showFilter ? "0%" : "",
+                  zIndex: showFilter ? "10000000" : "",
+                  padding: showFilter ? "10px" : "",
+                }}
+              >
+                <CloseIcon>
+                  <p onClick={() => setShowFilter(false)}>
+                    <i class="fa-solid fa-xmark"></i>
+                  </p>
+                </CloseIcon>
+                <div className="filter">
+                  <h3>Filter:</h3>
+                  <p
+                    onClick={() => {
+                      setCategory([""]);
+                      setSortby("");
+                      forceUpdate();
+                      getProductData();
+                    }}
+                  >
+                    Clean All
+                  </p>
+                </div>
+                <div className="filter_cat">
+                  <div>
+                    <h3>All Categories</h3>
+                    {toggelFilter ? (
+                      <i
+                        class="fa-solid fa-plus"
+                        onClick={() => setToggelFilter(!toggelFilter)}
+                      ></i>
+                    ) : (
+                      <i
+                        class="fa-solid fa-minus"
+                        onClick={() => setToggelFilter(!toggelFilter)}
+                      ></i>
+                    )}
+                  </div>
+                  <div className="cat_border_dark"></div>
+                  <div className="cat_border"></div>
+                </div>
+                <ul className={toggelFilter ? "none" : "block"}>
+                  {categoryList.map((item, index) => {
+                    const handleToggle = (item) => {
+                      const currentIndex = Category.indexOf(item);
+                      const newChecked = [...Category];
+                      if (currentIndex === -1) {
+                        newChecked.push(item);
+                      } else {
+                        newChecked.splice(currentIndex, 1);
+                      }
+                      setCategory(newChecked);
+                    };
+                    localStorage.setItem("category", JSON.stringify(Category));
+                    return (
+                      <li key={item.category_id}>
+                        <input
+                          type="checkbox"
+                          onChange={() => {
+                            handleToggle(`category#${item.category_id}`);
+                            forceUpdate();
+                          }}
+                          checked={
+                            Category.indexOf(`category#${item.category_id}`) ===
+                            -1
+                              ? false
+                              : true
+                          }
+                        />
+                        <Link to={`#${item.category_id}`}>
+                          {item.category_name}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="filter_cat">
+                  <div>
+                    <h3>Price</h3>
+                    {toggelFilterPrice ? (
+                      <i
+                        class="fa-solid fa-plus"
+                        onClick={() => setToggelFilterPrice(!toggelFilterPrice)}
+                      ></i>
+                    ) : (
+                      <i
+                        class="fa-solid fa-minus"
+                        onClick={() => setToggelFilterPrice(!toggelFilterPrice)}
+                      ></i>
+                    )}
+                  </div>
+                  <div className="cat_border_dark"></div>
+                  <div className="cat_border"></div>
+                </div>
+                <ul className={toggelFilterPrice ? "none" : "block"}>
+                  {priceList.map((item, index) => {
+                    const handleToggle = (item) => {
+                      const currentIndex = Category.indexOf(item);
+                      const newChecked = [...Category];
+                      if (currentIndex === -1) {
+                        newChecked.push(item);
+                      } else {
+                        newChecked.splice(currentIndex, 1);
+                      }
+                      setCategory(newChecked);
+                    };
+                    localStorage.setItem("category", JSON.stringify(Category));
+                    return (
+                      <li>
+                        <input
+                          type="checkbox"
+                          onChange={() => {
+                            handleToggle(`pricerange#${item.price_range_id}`);
+                            forceUpdate();
+                          }}
+                        />
+                        <Link to="#">
+                          ₹{item.min_price} - ₹{item.max_price}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+                {attributeList.map((item, index) => {
+                  return (
+                    <>
+                      <div className="filter_cat">
+                        <div>
+                          <h3>{item.attribute_name}</h3>{" "}
+                          {toggelFilterSize ? (
+                            <i
+                              class="fa-solid fa-plus"
+                              onClick={() =>
+                                setToggelFilterSize(!toggelFilterSize)
+                              }
+                            ></i>
+                          ) : (
+                            <i
+                              class="fa-solid fa-minus"
+                              onClick={() =>
+                                setToggelFilterSize(!toggelFilterSize)
+                              }
+                            ></i>
+                          )}
+                        </div>
+                        <div className="cat_border_dark"></div>
+                        <div className="cat_border"></div>
+                      </div>
+                      <ul className={toggelFilterSize ? "none" : "block"}>
+                        {item.attribute_values.map((item, index) => {
+                          const handleToggle = (item) => {
+                            const currentIndex = Category.indexOf(item);
+                            const newChecked = [...Category];
+                            if (currentIndex === -1) {
+                              newChecked.push(item);
+                            } else {
+                              newChecked.splice(currentIndex, 1);
+                            }
+                            setCategory(newChecked);
+                          };
+                          localStorage.setItem(
+                            "category",
+                            JSON.stringify(Category)
+                          );
+                          return (
+                            <li>
+                              <input
+                                type="checkbox"
+                                onChange={() => {
+                                  handleToggle(
+                                    `attribute#${item.attribute_value_id}`
+                                  );
+                                  forceUpdate();
+                                }}
+                              />
+                              <Link to="#">{item.attribute_value_name}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  );
+                })}
+              </ProductCard>
+            ) : null}
+            <ProductCard>
               <div className="filter">
                 <h3>Filter:</h3>
                 <p
                   onClick={() => {
                     setCategory([""]);
+                    setSortby("");
                     forceUpdate();
                     getProductData();
                   }}
@@ -307,7 +505,7 @@ const ProductCompo = ({
                               setToggelFilterSize(!toggelFilterSize)
                             }
                           ></i>
-                        ) : ( 
+                        ) : (
                           <i
                             class="fa-solid fa-minus"
                             onClick={() =>
@@ -359,10 +557,14 @@ const ProductCompo = ({
               <div className="sort_by">
                 <AiOutlineUnorderedList
                   className="menu_filter"
-                  onClick={() => setShowFilterSidebar(!showFilterSidebar)}
+                  onClick={() => {
+                    setShowFilter(!showFilter);
+                  }}
                 />
-                {showFilterSidebar === true ? (
-                  <SidebarOverlay></SidebarOverlay>
+                {showFilter === true ? (
+                  <>
+                    <SidebarOverlay></SidebarOverlay>
+                  </>
                 ) : null}
                 <div>
                   <h3>Sort By:</h3>
@@ -517,6 +719,21 @@ const ProductCompo = ({
 
 export default ProductCompo;
 
+const CloseIcon = styled.div`
+  position: fixed;
+  top: 2.5%;
+  right: 5%;
+  color: #fff;
+
+  i {
+    border: 2.5px solid #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 10000000000;
+  }
+`;
+
 const ProductBg = styled.div`
   background-image: url(${BgBlack});
   background-position: center;
@@ -535,7 +752,7 @@ const SidebarOverlay = styled.div`
   display: none;
   background-color: #000;
   opacity: 0.7;
-  z-index: 10000000;
+  z-index: 1000000;
   overflow-y: hidden;
 `;
 
@@ -592,23 +809,18 @@ const ProductCard = styled.div`
   }
   @media only screen and (max-width: 991px) {
     .filter-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      top: 480px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.5s ease;
+      display: none;
     }
     .filter-menu.active {
+      display: block;
+      width: 80%;
+      height: 100vh;
       background-color: #fff;
-      left: 10%;
-      opacity: 1;
-      overflow-y: hidden;
-      transition: all 0.5s ease;
-      /* z-index: 100; */
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      z-index: 10000000;
+      padding: 10px;
     }
   }
   .filter {
@@ -769,11 +981,11 @@ const ProductCard = styled.div`
       position: relative;
       width: 280px;
       height: 320px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 2.5rem;
     }
     img {
       width: 100%;
-      height: 60%;
+      height: 70%;
       background-color: whitesmoke;
       padding: 10px;
       border: 2px solid #333;
@@ -843,7 +1055,7 @@ const ProductCard = styled.div`
       align-items: center;
       justify-content: center;
       position: absolute;
-      bottom: 37%;
+      bottom: 27%;
       left: 50%;
       transform: translate(-50%, -60%);
       background-color: whitesmoke;

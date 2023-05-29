@@ -345,7 +345,7 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   };
 
   useEffect(() => {
-    loadScript("https://checkout.razorpay.com/v1/checkout.js");
+    loadScript("httpss://checkout.razorpay.com/v1/checkout.js");
   }, []);
 
   const [crateOrder, setCreateOrder] = useState([]);
@@ -406,8 +406,6 @@ const CheckoutCompo = ({ total, setTotal, setDetail, reducerValue, add }) => {
   const paymentId = localStorage.getItem("paymentId");
   const orderId = localStorage.getItem("orderId");
   const signature = localStorage.getItem("sign");
-  
-  // accountName, gstinNo, addressOne, addressTwo, addressCountry, addressState, addressCity, addressPhone, accountEmail, zipCode, shipName shipAddress shipAddress2 shipCountry shipState shipCity postCode orderNote
    
   const formValidate = () => {
     if (!accountName) {

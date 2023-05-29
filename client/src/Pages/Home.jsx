@@ -5,9 +5,9 @@ import BgBlack from "../Assets/strips/bg1.png";
 import CardLayout from "../Components/CardLayout";
 import CardsHome from "../Components/CardsHome";
 import MainSlider from "../Components/MainSlider";
+import CharactersCards from "../Components/CharactersCards";
 
 const Home = ({ toggleButton, toggleTab }) => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,6 +22,7 @@ const Home = ({ toggleButton, toggleTab }) => {
         <MainSlider />
         {/* <CardsHome toggleButton={toggleButton} toggleTab={toggleTab} /> */}
         <CardLayout toggleButton={toggleButton} toggleTab={toggleTab} />
+        {/* <CharactersCards /> */}
       </HomeBg>
     </>
   );
@@ -33,9 +34,10 @@ const HomeBg = styled.div`
   position: absolute;
   top: 0%;
   left: 0%;
-  background-image: url(${BgBlack});
-  background-position: center;
-  background-repeat: repeat;
+  /* background-image: url(${BgBlack}); */
+  background-color: #bbd97a;
+  /* background-position: center;
+  background-repeat: repeat; */
   height: 100%;
   width: 100%;
   position: relative;

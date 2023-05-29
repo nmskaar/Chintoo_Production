@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <FooterMain>
       {/* <FooterWave></FooterWave> */}
-      <FooterBg></FooterBg>
+      {/* <FooterBg></FooterBg> */}
       <FoooterContainer>
         <FooterCard>
           <p>Copyright © 2021 CBT Technoart. All Rights Reserved.</p>
@@ -37,7 +37,8 @@ const FoooterContainer = styled.div`
   display: flex;
   align-content: center;
   justify-content: space-between;
-  background-color: #003e84;
+  /* background-color: #003e84; */
+  background-color: #284b8c;
   color: #fff;
   padding: 20px 25px;
   padding-top: 27px;
@@ -60,12 +61,16 @@ const FooterCard = styled.div`
   }
   p {
     text-align: center;
-    font-family: "TillanaSemiBold";
+    /* font-family: "TillanaSemiBold"; */
+    font-family: "ForBold";
+    color: #fff;
   }
   div > p {
     margin-right: 13px;
     text-align: center;
-    font-family: "TillanaSemiBold";
+    /* font-family: "TillanaSemiBold"; */
+    font-family: "ForBold";
+    color: #fff;
   }
   @media only screen and (max-width: 991px) {
     div {

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useAPI } from "../Context/apiContext";
 import Slider from "react-slick";
 import styled from "styled-components";
+import StripRight from "../Utils/StripRight";
+import StripLeft from "../Utils/StripLeft";
+import strip3 from "../Assets/strips/strip3.png";
 
 const MainSlider = () => {
   const [nav1, setNav1] = useState();
@@ -14,6 +17,8 @@ const MainSlider = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    nextArrow: <StripRight />,
+    prevArrow: <StripLeft />,
   };
 
   const { sliderData } = useAPI();
@@ -32,6 +37,15 @@ const MainSlider = () => {
             </SliderImg>
           );
         })}
+        {/* <SliderImg>
+          <img src={strip3} alt="" />
+        </SliderImg>
+        <SliderImg>
+          <img src={strip3} alt="" />
+        </SliderImg>
+        <SliderImg>
+          <img src={strip3} alt="" />
+        </SliderImg> */}
       </Slider>
     </SliderDiv>
   );
@@ -40,10 +54,11 @@ const MainSlider = () => {
 export default MainSlider;
 
 const SliderDiv = styled.div`
-  margin-top: 35px;
+  padding-top: 25px;
+  position: relative;
 
   @media only screen and (max-width: 991px) {
-    margin-top: 20px;
+    padding-top: 0px;
   }
 `;
 
@@ -51,11 +66,13 @@ const SliderImg = styled.div`
   img {
     margin: auto;
     height: 450px;
-    width: 100%;
+    width: 80%;
+    border: 15px solid #fff;
   }
   @media only screen and (max-width: 991px) {
     img {
       height: 235px;
+      width: 100%;
     }
   }
 `;

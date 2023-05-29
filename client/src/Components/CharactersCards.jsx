@@ -12,7 +12,7 @@ const CharactersCards = () => {
   }, []);
 
   return (
-    <CharacterBg>
+    <>
       <CharacterContainer>
         <CharacterCards>
           {characterData.map((item) => {
@@ -29,174 +29,18 @@ const CharactersCards = () => {
             );
           })}
         </CharacterCards>
-        {/* <CharacterCards>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle4} alt="" />
-            </div>
-            <div>
-              <h4>Chintoo</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle1} alt="" />
-            </div>
-            <div>
-              <h4>Joshikaka</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle2} alt="" />
-            </div>
-            <div>
-              <h4>Satishdada</h4>{" "}
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle8} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Raju</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle9} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Pappu</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle3} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Chooti</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle10} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Neha</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle5} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Sonu</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle6} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Baglya</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle7} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Joshikaku</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-          <CharacterCard>
-            <div className="imgCard" data-aos="flip-up">
-              <img src={circle11} alt="" />
-            </div>
-            <div>
-              <h4 data-aos="flip-up">Pappa</h4>{" "}
-              <p data-aos="flip-up">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                itaque, quidem error assumenda odit ipsa maxime, magni porro
-                officiis ab voluptatibus ipsam veniam quaerat animi facilis
-                eaque, natus sequi odio!
-              </p>
-            </div>
-          </CharacterCard>
-        </CharacterCards> */}
       </CharacterContainer>
-    </CharacterBg>
+    </>
   );
 };
 
 export default CharactersCards;
 
 const CharacterBg = styled.div`
-  background-image: url(${BgBlack});
+  /* background-image: url(${BgBlack});
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: repeat; */
+  background-color: #bbd97a;
   height: 100%;
   width: 100%;
   position: relative;

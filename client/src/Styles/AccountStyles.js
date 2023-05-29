@@ -40,7 +40,7 @@ export const LoginContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 168vh;
+  height: 185vh;
   position: relative;
 
   @media only screen and (max-width: 414px) {
@@ -165,6 +165,7 @@ export const RememberMe = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
+  margin-bottom: 1rem;
 
   div {
     span {
@@ -182,7 +183,7 @@ export const RememberMe = styled.div`
   }
 `;
 
-export const SignInBtn = styled.div`
+export const SignInBtn = styled.button`
   cursor: pointer;
   width: 100%;
   background-color: #336699;
@@ -194,6 +195,8 @@ export const SignInBtn = styled.div`
   text-transform: uppercase;
   margin-top: 18px;
   font-family: "TillanaSemiBold";
+  outline: none;
+  border: none;
 `;
 
 export const SignWithSocial = styled(Link)`

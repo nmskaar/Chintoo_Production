@@ -95,64 +95,7 @@ const StripsSlider = ({ yearValue }) => {
               </SliderImg>
             );
           })}
-          {/* <SliderImg>
-            <h5>January 1,2023</h5>
-            <img src={strip3} alt="" />
-          </SliderImg>
-          <SliderImg>
-            <h5>January 2,2023</h5>
-            <img src={strip1} alt="" />
-          </SliderImg>
-          <SliderImg>
-            <h5>January 3,2023</h5>
-            <img src={strip2} alt="" />
-          </SliderImg>
-          <SliderImg>
-            <h5>January 4,2023</h5>
-            <img src={strip1} alt="" />
-          </SliderImg>
-          <SliderImg>
-            <h5>January 5,2023</h5>
-            <img src={strip2} alt="" />
-          </SliderImg>
-          <SliderImg>
-            <h5>January 6,2023</h5>
-            <img src={strip3} alt="" />
-          </SliderImg> */}
         </Slider>
-        {/* <Slider
-          asNavFor={nav1}
-          ref={(slider2) => setNav2(slider2)}
-          className="asNavGrid"
-          {...settingsAsNavFor}
-        >
-          {stripSlider.map((item) => {
-            return (
-              <AsNavFor>
-                <h5>{item.date}</h5>
-                <img src={item.image} alt="" />
-              </AsNavFor>
-            );
-          })}
-          <AsNavFor>
-            <img src={strip3} alt="" />
-          </AsNavFor>
-          <AsNavFor>
-            <img src={strip1} alt="" />
-          </AsNavFor>
-          <AsNavFor>
-            <img src={strip2} alt="" />
-          </AsNavFor>
-          <AsNavFor>
-            <img src={strip1} alt="" />
-          </AsNavFor>
-          <AsNavFor>
-            <img src={strip2} alt="" />
-          </AsNavFor>
-          <AsNavFor>
-            <img src={strip3} alt="" />
-          </AsNavFor>
-        </Slider> */}
       </SliderContainer>
     </BgSlider>
   );
@@ -169,6 +112,7 @@ const SliderImg = styled.div`
     margin: auto;
     height: 450px;
     width: 90%;
+    border: 15px solid #fff;
   }
   h5 {
     margin-left: 50px;

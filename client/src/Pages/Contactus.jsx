@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useAPI } from "../Context/apiContext";
 import styled from "styled-components";
 import BgBlack from "../Assets/strips/bg1.png";
@@ -17,6 +18,15 @@ const Contactus = () => {
   const closeMobileMenu4 = () => setClickFaq4(false);
 
   const { companyinfoData } = useAPI();
+
+  const [verfied, setVerifed] = useState(false);
+
+  const { settingsData } = useAPI();
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -197,6 +207,16 @@ const Contactus = () => {
                       <label>Your Message</label>
                       <textarea name="" id="" cols="30" rows="5"></textarea>
                     </div>
+                    {settingsData.map((item) => {
+                      return (
+                        <>
+                          <ReCAPTCHA
+                            sitekey={item.site_key}
+                            onChange={onChange}
+                          />
+                        </>
+                      );
+                    })}
                     <div className="send_now">Send now</div>
                   </ContactFormCard>
                 </ContactFormGrid>
@@ -445,6 +465,9 @@ const ContactFormCard = styled.div`
     input,
     textarea {
       width: 100%;
+    }
+    textarea {
+      margin-bottom: 1.5rem;
     }
     .send_now {
       width: 40%;

@@ -19,6 +19,11 @@ import navbarPattern from "../Assets/headerImg/navbarPattern.png";
 import navRes from "../Assets/headerImg/navRes.png";
 import borderRes from "../Assets/headerImg/borderRes.png";
 import svgWave from "../Assets/headerImg/svgWave.png";
+import lineRes from "../Assets/headerImg/lineRes.png";
+import lineNew from "../Assets/headerImg/lineNew.png";
+import Logo2 from "../Assets/headerImg/Logo2.png";
+import Cover from "../Assets/headerImg/Cover.png";
+import BG03 from "../Assets/headerImg/BG03.png";
 
 const Header = ({ toggleButton, toggleTab }) => {
   useEffect(() => {
@@ -40,37 +45,27 @@ const Header = ({ toggleButton, toggleTab }) => {
     <HeaderMain>
       <NavBar>
         <NavBanner>
-          <div>
-            <img src={mainHeadImg1} alt="" />
-          </div>
-          <div>
-            <img src={mainHeadImg2} alt="" />
-          </div>
-          <div>
-            <img src={mainHeadImg3} alt="" />
-          </div>
-          <div>
-            <img src={mainHeadImg4} alt="" />
-          </div>
+          <div>{/* <img src={mainHeadImg1} alt="" /> */}</div>
+          <div>{/* <img src={mainHeadImg2} alt="" /> */}</div>
+          <div>{/* <img src={mainHeadImg3} alt="" /> */}</div>
+          <div>{/* <img src={mainHeadImg4} alt="" /> */}</div>
           {click ? null : (
             <>
-              {settingsData.map((item) => {
+              {/* {settingsData.map((item) => {
                 return (
                   <MainLogo>
                     <img src={chintooLogo} alt="" data-aos="fade-down" />
                   </MainLogo>
                 );
-              })}
+              })} */}
+              <MainLogo>
+                <img src={Logo2} alt="" data-aos="fade-down" />
+              </MainLogo>
             </>
           )}
           {click ? null : (
             <MainIcon>
-              <img
-                src={chintoo}
-                alt=""
-                style={{ height: "200px" }}
-                data-aos="zoom-in-up"
-              />
+              <img src={Cover} alt="" data-aos="zoom-in-up" />
             </MainIcon>
           )}
         </NavBanner>
@@ -86,15 +81,15 @@ const Header = ({ toggleButton, toggleTab }) => {
                 closeMobileMenu();
               }}
             >
-              Home
+              HOME
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 1 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 1 ? "active_nav" : "none"}
             />
@@ -111,12 +106,12 @@ const Header = ({ toggleButton, toggleTab }) => {
               CHARACTERS
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 2 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 2 ? "active_nav" : "none"}
             />
@@ -133,12 +128,12 @@ const Header = ({ toggleButton, toggleTab }) => {
               CREATORS
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 3 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 3 ? "active_nav" : "none"}
             />
@@ -155,12 +150,12 @@ const Header = ({ toggleButton, toggleTab }) => {
               STRIPS
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 4 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 4 ? "active_nav" : "none"}
             />
@@ -177,12 +172,12 @@ const Header = ({ toggleButton, toggleTab }) => {
               PRODUCTS
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 5 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 5 ? "active_nav" : "none"}
             />
@@ -199,12 +194,12 @@ const Header = ({ toggleButton, toggleTab }) => {
               ANIMATIONS
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
               className={toggleButton === 6 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
               className={toggleButton === 6 ? "active_nav" : "none"}
             />
@@ -214,23 +209,23 @@ const Header = ({ toggleButton, toggleTab }) => {
               MEDIA <i className="fa-solid fa-caret-down"></i>
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
-              className={toggleButton === 8 ? "active_res" : "none"}
+              className={toggleButton === 7 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
-              className={toggleButton === 8 ? "active_nav" : "none"}
+              className={toggleButton === 7 ? "active_nav" : "none"}
             />
             <div className="sub_menu">
               <ul>
                 <li>
                   <Link
                     to="/events"
-                    className={toggleButton === 8 ? "active_nav" : "tabs"}
+                    className={toggleButton === 7 ? "active_nav" : "tabs"}
                     onClick={() => {
-                      toggleTab(8);
+                      toggleTab(7);
                       closeMobileMenu();
                     }}
                   >
@@ -240,9 +235,9 @@ const Header = ({ toggleButton, toggleTab }) => {
                 <li>
                   <Link
                     to="/gallery"
-                    className={toggleButton === 8 ? "active_nav" : "tabs"}
+                    className={toggleButton === 7 ? "active_nav" : "tabs"}
                     onClick={() => {
-                      toggleTab(8);
+                      toggleTab(7);
                       closeMobileMenu();
                     }}
                   >
@@ -255,9 +250,9 @@ const Header = ({ toggleButton, toggleTab }) => {
           <li>
             <Link
               to="/contactus"
-              className={toggleButton === 7 ? "active_nav" : "tabs"}
+              className={toggleButton === 8 ? "active_nav" : "tabs"}
               onClick={() => {
-                toggleTab(7);
+                toggleTab(8);
                 closeMobileMenu();
               }}
             >
@@ -265,14 +260,14 @@ const Header = ({ toggleButton, toggleTab }) => {
               <span>US</span>
             </Link>
             <img
-              src={borderRes}
+              src={lineRes}
               alt=""
-              className={toggleButton === 7 ? "active_res" : "none"}
+              className={toggleButton === 8 ? "active_res" : "none"}
             />
             <img
-              src={line}
+              src={lineNew}
               alt=""
-              className={toggleButton === 7 ? "active_nav" : "none"}
+              className={toggleButton === 8 ? "active_nav" : "none"}
             />
           </li>
         </ul>
@@ -285,7 +280,7 @@ const Header = ({ toggleButton, toggleTab }) => {
         )}
       </MenuIcon>
       {/* {click ? null : <Wave></Wave>} */}
-      {click ? null : <Navbg></Navbg>}
+      {/* {click ? null : <Navbg></Navbg>} */}
     </HeaderMain>
   );
 };
@@ -298,7 +293,7 @@ const HeaderMain = styled.div`
 
 const NavBar = styled.div`
   position: relative;
-  background-image: url(${HeadBg});
+  background-image: url(${BG03});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -363,7 +358,7 @@ const MainLogo = styled.div`
   img {
     position: absolute;
     top: 0%;
-    left: 0.4%;
+    left: 2%;
     margin-top: 30px;
     z-index: 10000;
     object-fit: cover;
@@ -371,12 +366,14 @@ const MainLogo = styled.div`
   }
   @media only screen and (max-width: 991px) {
     img {
-      width: 210px;
+      top: 2%;
+      left: 0.5%;
+      width: 170px;
     }
   }
   @media only screen and (max-width: 380px) {
     img {
-      width: 200px;
+      width: 180px;
     }
   }
 `;
@@ -384,19 +381,25 @@ const MainLogo = styled.div`
 const MainIcon = styled.div`
   position: absolute;
   top: 0%;
-  right: 0.5%;
+  right: 2%;
   margin-top: 27px;
   z-index: 1000000;
+  img {
+    height: 200px;
+  }
   @media only screen and (max-width: 991px) {
-    right: 5%;
+    right: 3%;
     img {
       width: 180px;
+      height: 200px;
     }
   }
   @media only screen and (max-width: 380px) {
-    right: 8%;
+    right: 4%;
+    top: 20%;
     img {
-      width: 140px;
+      width: 160px;
+      height: 150px;
     }
   }
 `;
@@ -500,9 +503,10 @@ const MenuIcon = styled.div`
 const NavListBg = styled.div`
   position: relative;
   /* background-color: #002249; */
-  background-color: #003e84;
+  /* background-color: #003e84; */
+  background-color: #284b8c;
   width: 100%;
-  height: 55px;
+  height: 65px;
   z-index: 100000;
 
   &::before {
@@ -512,8 +516,8 @@ const NavListBg = styled.div`
   ul {
     position: absolute;
     top: 45%;
-    left: 50%;
-    transform: translate(-50%, -43%);
+    left: 49%;
+    transform: translate(-50%, -40%);
     display: flex;
   }
   ul > li {
@@ -526,9 +530,9 @@ const NavListBg = styled.div`
   }
   ul > li > img {
     display: none;
-    width: 90px;
+    width: 80px;
     object-fit: contain;
-    margin-bottom: -10px;
+    margin-bottom: -3px;
   }
   ul > li:hover img {
     display: block;
@@ -536,11 +540,12 @@ const NavListBg = styled.div`
   ul > li > a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
-    font-weight: 200;
+    font-size: 17px;
+    font-weight: 500;
     text-transform: uppercase;
     padding: 3px 18px;
-    font-family: "TillanaSemiBold";
+    font-family: "ForBold";
+    transform: scaleY(1.2);
   }
   ul > li > a i {
     margin-left: 10px;
@@ -590,7 +595,7 @@ const NavListBg = styled.div`
     display: none;
   }
   span {
-    font-family: "TillanaSemiBold";
+    font-family: "ForBold";
   }
   ul .menu-item-has-children:hover .sub_menu {
     transform: translateY(0px);
@@ -697,7 +702,7 @@ const NavListBg = styled.div`
     .span_a {
       /* color: #fff; */
       padding-right: 5px;
-      font-family: "TillanaSemiBold";
+      font-family: "ForBold";
     }
     .spna_a:hover {
       color: #003e84 !important;

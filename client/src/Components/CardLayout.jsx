@@ -66,7 +66,7 @@ const CardLayout = ({ toggleButton, toggleTab }) => {
           data-aos="fade-down"
           to="/events"
           onClick={() => {
-            toggleTab(8);
+            toggleTab(7);
           }}
         >
           <img src={ChintoochiAaji} alt="" />
@@ -78,7 +78,7 @@ const CardLayout = ({ toggleButton, toggleTab }) => {
           data-aos="fade-down"
           to="/gallery"
           onClick={() => {
-            toggleTab(8);
+            toggleTab(7);
           }}
         >
           <img src={BgCard} alt="" />
@@ -101,7 +101,7 @@ const CardContainer = styled.div`
   padding-bottom: 9rem;
 
   @media only screen and (max-width: 991px) {
-    padding-bottom: 15rem;
+    /* padding-bottom: 15rem; */
   }
 `;
 

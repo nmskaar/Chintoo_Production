@@ -338,7 +338,7 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                 <i class="fa-solid fa-expand "></i>
               </div>
               <div>
-                 {/* <FullScreenModal setShowModal={setShowModal} /> */}
+                {/* <FullScreenModal setShowModal={setShowModal} /> */}
                 {/* <LightGallery
                   speed={200}
                   plugins={[
@@ -442,11 +442,15 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
               </ProductSize>
               {detailProductData.is_external === "1" ? (
                 <ProductPurchase>
-                <div className="cartBtn">
-                  <a href={detailProductData.link} target="_blank" rel="noreffrer">
-                    <i class="fa-solid fa-bag-shopping"></i> Buy Now
-                  </a>
-                </div>
+                  <div className="cartBtn">
+                    <a
+                      href={detailProductData.link}
+                      target="_blank"
+                      rel="noreffrer"
+                    >
+                      <i class="fa-solid fa-bag-shopping"></i> Buy Now
+                    </a>
+                  </div>
                 </ProductPurchase>
               ) : (
                 <>
@@ -585,13 +589,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -608,13 +605,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -631,13 +621,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -654,13 +637,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -677,13 +653,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -700,13 +669,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -723,36 +685,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
-                            <p>₹{item.product_price}</p>
-                          </div>
-                        </MoreProduct>
-                      );
-                    })}
-                  </div>
-                  <div>
-                    {moreProduct.slice(29, 33).map((item) => {
-                      return (
-                        <MoreProduct
-                          to={`/product-detail/${item.product_id}/${item.product_variant_id}`}
-                          onClick={() => increment()}
-                        >
-                          <img src={item.image} alt="" />
-                          <div className="data">
-                            <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -769,13 +701,6 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -792,13 +717,22 @@ const DetailProduct = ({ cartItems, onAdd, onRemove }) => {
                           <img src={item.image} alt="" />
                           <div className="data">
                             <h2>{item.product_name}</h2>
-                            {/* <div className="ratings">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                            </div> */}
+                            <p>₹{item.product_price}</p>
+                          </div>
+                        </MoreProduct>
+                      );
+                    })}
+                  </div>
+                  <div>
+                    {moreProduct.slice(40, 45).map((item) => {
+                      return (
+                        <MoreProduct
+                          to={`/product-detail/${item.product_id}/${item.product_variant_id}`}
+                          onClick={() => increment()}
+                        >
+                          <img src={item.image} alt="" />
+                          <div className="data">
+                            <h2>{item.product_name}</h2>
                             <p>₹{item.product_price}</p>
                           </div>
                         </MoreProduct>
@@ -1656,6 +1590,7 @@ const MoreContianer = styled.div`
   top: 7%;
   right: 5%;
   background-color: transparent;
+
   .productGrid {
     width: 330px;
   }
@@ -1684,6 +1619,7 @@ const MoreContianer = styled.div`
     top: 72%;
     right: 5%;
     z-index: 100000000;
+    padding-bottom: 5rem;
   }
   @media only screen and (max-width: 414px) {
     .productGrid {

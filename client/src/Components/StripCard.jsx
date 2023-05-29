@@ -39,76 +39,11 @@ const StripCard = () => {
                 </YearCard>
               );
             })}
-            {/* <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip1} alt="" />
-              <h3>Year 2023</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip2} alt="" />
-              <h3>Year 2022</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip3} alt="" />
-              <h3>Year 2021</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip1} alt="" />
-              <h3>Year 2020</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip2} alt="" />
-              <h3>Year 2019</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip3} alt="" />
-              <h3>Year 2018</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard> */}
           </YearContianer>
         </YearCards>
       ) : null}
-      {/* {toggleBtn === 2 ? (
-        <YearCards>
-          <YearContianer>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip2} alt="" />
-              <h3>Year 2017</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip1} alt="" />
-              <h3>Year 2016</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip3} alt="" />
-              <h3>Year 2015</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip2} alt="" />
-              <h3>Year 2014</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip1} alt="" />
-              <h3>Year 2013</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-            <YearCard to="/strip-month" data-aos="fade-down">
-              <img src={strip3} alt="" />
-              <h3>Year 2012</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </YearCard>
-          </YearContianer>
-        </YearCards>
-      ) : null} */}
-      <PageInition>
+      
+      {/* <PageInition>
         <ArrowLeft className="button-55" onClick={() => togglePage(1)}>
           <i className="fa-solid fa-arrow-left"></i>
         </ArrowLeft>
@@ -130,7 +65,7 @@ const StripCard = () => {
         <ArrowRight className="button-55" onClick={() => togglePage(2)}>
           <i class="fa-solid fa-arrow-right"></i>
         </ArrowRight>
-      </PageInition>
+      </PageInition> */}
     </YearContainer>
   );
 };

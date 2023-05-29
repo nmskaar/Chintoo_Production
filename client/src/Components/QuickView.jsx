@@ -690,30 +690,7 @@ const ProductColor = styled.div`
     margin-left: 5px;
   }
 
-  .color_Div > div {
-    display: inline-block;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
-  .color_Div div:nth-child(1) {
-    background-color: yellow;
-  }
-  .color_Div div:nth-child(2) {
-    background-color: red;
-  }
-  .color_Div div:nth-child(3) {
-    background-color: green;
-  }
-  .color_Div div:nth-child(4) {
-    background-color: skyblue;
-  }
-  .color_Div div:nth-child(5) {
-    background-color: black;
-  }
+  cc
 
   @media only screen and (max-width: 991px) {
     align-items: flex-start;

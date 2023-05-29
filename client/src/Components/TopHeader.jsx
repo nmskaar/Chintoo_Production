@@ -2,7 +2,14 @@ import React, { useState, useEffect, useReducer } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const TopHeader = ({ showSidebar, setShowSidebar, accout, setAccount, forceUpdate, reducerValue }) => {
+const TopHeader = ({
+  showSidebar,
+  setShowSidebar,
+  accout,
+  setAccount,
+  forceUpdate,
+  reducerValue,
+}) => {
   const [loginUser, setLoginUser] = useState("");
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userId"));
@@ -78,16 +85,21 @@ const TopNav = styled.div`
     margin: 0px 10px;
     font-weight: 500;
     font-size: 13px;
-    font-family: "TillanaSemiBold";
-    color: #2b2b2b;
+    font-family: "Anton", sans-serif;
+    font-family: "ForBold";
+    color: #333;
+    /* letter-spacing: 1px; */
   }
   select {
     margin: 0px 4px;
     font-weight: 500;
     font-size: 13px;
-    font-family: "TillanaSemiBold";
+    /* font-family: "TillanaSemiBold"; */
     text-transform: uppercase;
-    color: #2b2b2b;
+    font-family: "Anton", sans-serif;
+    font-family: "ForBold";
+    /* letter-spacing: 1px; */
+    color: #333;
     outline: none;
     border: none;
   }
@@ -115,8 +127,11 @@ const TermsLink = styled(Link)`
   font-weight: 500;
   font-size: 13px;
   text-transform: uppercase;
-  font-family: "TillanaSemiBold";
-  color: #2b2b2b;
+  /* font-family: "TillanaSemiBold"; */
+  font-family: "Anton", sans-serif;
+    font-family: "ForBold";
+  color: #333;
+  /* letter-spacing: 1px; */
 `;
 
 const SidebarOverlay = styled.div`

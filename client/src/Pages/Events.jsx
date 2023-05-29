@@ -62,7 +62,7 @@ const Events = () => {
               );
             })}
           </EventGrid>
-          <PageInition>
+          {/* <PageInition>
             <ArrowLeft className="button-55" onClick={() => togglePage(1)}>
               <i className="fa-solid fa-arrow-left"></i>
             </ArrowLeft>
@@ -84,7 +84,7 @@ const Events = () => {
             <ArrowRight className="button-55" onClick={() => togglePage(2)}>
               <i class="fa-solid fa-arrow-right"></i>
             </ArrowRight>
-          </PageInition>
+          </PageInition> */}
         </EventContainer>
       </EventsBg>
     </div>

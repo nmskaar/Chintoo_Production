@@ -146,12 +146,13 @@ function App() {
               removeItem={removeItem}
             />
           ) : null}
-          {showFilterSidebar === true ? (
+          {/* {showFilterSidebar === true ? (
             <FilterSidebar
               showFilterSidebar={showFilterSidebar}
               setShowFilterSidebar={setShowFilterSidebar}
+              forceUpdate={forceUpdate}
             />
-          ) : null}
+          ) : null} */}
           <Routes>
             <Route
               path="/"

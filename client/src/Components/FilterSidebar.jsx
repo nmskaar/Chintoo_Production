@@ -5,7 +5,7 @@ import Aos from "aos";
 import product4 from "../Assets/products/product4.png";
 import { useAPI } from "../Context/apiContext";
 
-const FilterSidebar = ({ showFilterSidebar, setShowFilterSidebar }) => {
+const FilterSidebar = ({ showFilterSidebar, setShowFilterSidebar, forceUpdate }) => {
   const [toggelFilter, setToggelFilter] = useState();
   const [toggelFilterPrice, setToggelFilterPrice] = useState();
   const [toggelFilterSize, setToggelFilterSize] = useState();
@@ -14,6 +14,8 @@ const FilterSidebar = ({ showFilterSidebar, setShowFilterSidebar }) => {
   const [showFilter, setShowFilter] = useState(false);
 
   const { attributeList, priceList, categoryList } = useAPI();
+
+  const [Category, setCategory] = useState([]);
 
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
@@ -60,25 +62,26 @@ const FilterSidebar = ({ showFilterSidebar, setShowFilterSidebar }) => {
           </div>
           <ul className={toggelFilter ? "none" : "block"}>
             {categoryList.map((item, index) => {
-              // const handleChange = (event) => {
-              //   if (event.target.checked) {
-              //     forceUpdate();
-              //     setCategoryId([
-              //       ...categoryId,
-              //       `category#${item.category_id}`,
-              //     ]);
-              //     getProductData();
-              //     console.log("✅ Checkbox is checked");
-              //   } else {
-              //     forceUpdate();
-              //     removeItem(index);
-              //     getProductData();
-              //     console.log("⛔️ Checkbox is NOT checked");
-              //   }
-              // };
+              const handleToggle = (item) => {
+                const currentIndex = Category.indexOf(item);
+                const newChecked = [...Category];
+                if (currentIndex === -1) {
+                  newChecked.push(item);
+                } else {
+                  newChecked.splice(currentIndex, 1);
+                }
+                setCategory(newChecked);
+              };
+              localStorage.setItem("category", JSON.stringify(Category));
               return (
                 <li key={item.category_id}>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    onChange={() => {
+                      handleToggle(`category#${item.category_id}`);
+                      forceUpdate();
+                    }}
+                  />
                   <Link to={`#${item.category_id}`}>{item.category_name}</Link>
                 </li>
               );
@@ -131,8 +134,8 @@ const FilterSidebar = ({ showFilterSidebar, setShowFilterSidebar }) => {
               return (
                 <li>
                   <a href="#">
-                    <input type="checkbox" /> ₹
-                    {item.min_price} - ₹{item.max_price}
+                    <input type="checkbox" /> ₹{item.min_price} - ₹
+                    {item.max_price}
                   </a>
                 </li>
               );
